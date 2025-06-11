@@ -2,8 +2,6 @@ Flask
 flask_cors
 gunicorn
 spacy
-en-core-web-md @ https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.7.0/en_core_web_md-3.7.0-py3-none-any.whl
-
 PyPDF2
 scikit-learn
-
+en-core-web-md @ https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.7.1/en_core_web_md-3.7.1-py3-none-any.whl
