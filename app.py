@@ -8,7 +8,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__)
 CORS(app)
 
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_md")
+
 
 def extract_text_from_pdf(file):
     pdf = PyPDF2.PdfReader(file)
