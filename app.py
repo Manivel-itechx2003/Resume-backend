@@ -6,7 +6,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 app = Flask(__name__)
-CORS(app)
+
+# ✅ Allow any origin for testing — update to specific domain later for security
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 nlp = spacy.load("en_core_web_md")
 
@@ -30,8 +32,6 @@ def analyze_resume(resume_text, job_desc):
     tfidf = TfidfVectorizer().fit_transform(docs)
     score = cosine_similarity(tfidf[0:1], tfidf[1:2])[0][0]
     return round(score * 100, 2)
-
-
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
